@@ -1,0 +1,46 @@
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>牌ならべ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <section class="section">
+        <h1 class="title my-4">牌ならべ</h1>
+
+        <section class="section">
+          <h2 class="title">牌姿入力(mpsz形式)</h2>
+
+          <form id="form">
+            <div class="field has-addons">
+              <div class="control is-expanded">
+                <input id="input" class="input" type="text" placeholder="23344r5688p3477s">
+              </div>
+              <div class="control">
+                <button type="submit" class="button is-info">生成</button>
+              </div>
+            </div>
+            <p class="help">字牌は <code>1～7z</code>、赤ドラは <code>0m か r5m</code> で入れてね</p>
+          </form>
+        </section>
+
+        <section class="section pt-3">
+          <h2 class="title">画像(生成結果)</h2>
+
+          <div id="result">
+            <div id="target"></div>
+            <div id="output"></div>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

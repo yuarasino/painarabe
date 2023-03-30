@@ -1,0 +1,22 @@
+#result {
+  position: relative;
+  overflow-x: auto;
+}
+
+#target {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+}
+
+#output {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+#output > img {
+  max-width: unset;
+}
