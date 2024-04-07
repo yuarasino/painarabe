@@ -3,6 +3,8 @@
   const $input = document.querySelector("#input")
   const $target = document.querySelector("#target")
   const $output = document.querySelector("#output")
+  const $quality = document.querySelector("#quality")
+  const $width = document.querySelector("#width")
 
   const suitMap = {
     m: "man",
@@ -13,6 +15,8 @@
 
   $form.addEventListener("submit", (e) => {
     e.preventDefault()
+    const quality = $quality.checked
+    const width = Number($width.value)
     const tiles = []
     const hand = $input.value.replace(/r5/g, "0")
     const regex = /[0-9]+[mpsz]/g
@@ -28,23 +32,23 @@
     tiles.forEach((tile) => {
       const rank = tile[0]
       const suit = tile[1]
-      const src = `${suitMap[suit]}${rank}-66-90-l-emb.png`
+      const src = quality ? `./tiles2/${suit}${rank}.png` : `./tiles/${suitMap[suit]}${rank}-66-90-l-emb.png`
       $target.insertAdjacentHTML(
         'beforeend',
-        `<img src="./tiles/${src}" alt="${tile}" />`,
+        `<img width="${width}" src="${src}" alt="${tile}" />`,
       )
     })
 
     $output.innerHTML = ""
     const options = {
-      width: 66 * tiles.length,
+      width: width * tiles.length,
       backgroundColor: "transparent",
     }
     html2canvas($target, options).then((canvas) => {
       const src = canvas.toDataURL("image/png")
       $output.insertAdjacentHTML(
         'beforeend',
-        `<img src="${src}" alt="${hand}.png" />`,
+        `<img src="${src}" alt="${hand}.png" download="${hand}.png" />`,
       )
     })
   })

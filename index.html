@@ -17,7 +17,7 @@
           <h2 class="title">牌姿入力(mpsz形式)</h2>
 
           <form id="form">
-            <div class="field has-addons">
+            <div class="field has-addons mt">
               <div class="control is-expanded">
                 <input id="input" class="input" type="text" placeholder="23344r5688p3477s">
               </div>
@@ -26,6 +26,21 @@
               </div>
             </div>
             <p class="help">字牌は <code>1～7z</code>、赤ドラは <code>0m か r5m</code> で入れてね</p>
+
+            <div class="field mt-5">
+                <label class="label">牌の横幅</label>
+                <div class="control">
+                  <input id="width" class="input" type="number" value="100" placeholder="100">
+                </div>
+            </div>
+            <div class="field mt-5">
+              <div class="control">
+                <label class="checkbox">
+                  <input id="quality" type="checkbox">
+                  高画質の画像を使用する
+                </label>
+              </div>
+            </div>
           </form>
         </section>
 
