@@ -20,3 +20,26 @@
 #output > img {
   max-width: unset;
 }
+
+#result2 {
+  position: relative;
+  overflow-x: auto;
+}
+
+#target2 {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+}
+
+#output2 {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+#output2 > img {
+  max-width: unset;
+}
